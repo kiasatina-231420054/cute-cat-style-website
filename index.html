@@ -5,13 +5,34 @@
     <title>The Path to Success</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script>
+        // Add sound effect on button click
+        function playSound() {
+            const audio = new Audio('sounds/click.mp3');
+            audio.play();
+        }
+
+        // Animate cat on hover
+        function animateCat() {
+            const cat = document.querySelector('.cat-img');
+            cat.classList.add('bounce');
+            setTimeout(() => cat.classList.remove('bounce'), 1000);
+        }
+
+        // Add sparkle effect on title hover
+        function sparkleTitle() {
+            const title = document.querySelector('h1');
+            title.classList.add('sparkle');
+            setTimeout(() => title.classList.remove('sparkle'), 500);
+        }
+    </script>
 </head>
 <body>
     <div class="container">
-        <h1>🎨 The Path to Success: Achieving Your Career Dreams 🐾</h1>
+        <h1 onmouseover="sparkleTitle()">🎨 The Path to Success: Achieving Your Career Dreams 🐾</h1>
         <p>Hello! Welcome to my personal journey to becoming a creative Graphic Designer.</p>
-        <img src="images/cat_pixel.png" alt="Cute Cat" class="cat-img">
-        <a href="steps.html" class="button">Start</a>
+        <img src="images/cat_pixel.png" alt="Cute Cat" class="cat-img" onmouseover="animateCat()">
+        <a href="steps.html" class="button" onclick="playSound()">Start</a>
     </div>
 </body>
 </html>
